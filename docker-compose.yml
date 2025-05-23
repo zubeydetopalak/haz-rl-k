@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./ymgbackend
+    container_name: spring-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/mydb
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    networks:
+      - appnet
+
+  frontend:
+    build:
+      context: ./ymgtest
+    container_name: react-app
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - appnet
+
+  db:
+    image: postgres:15
+    container_name: postgres-db
+    restart: always
+    environment:
+      POSTGRES_DB: mydb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - appnet
+
+volumes:
+  pgdata:
+
+networks:
+  appnet:

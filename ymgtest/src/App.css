@@ -1,0 +1,64 @@
+/* Sayfa ortalaması */
+.belge-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin-top: 5rem;
+  margin-left: 750px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.belge-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.belge-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.belge-form input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.belge-form button {
+  padding: 0.5rem;
+  background-color: #f3b700;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.belge-form button:hover {
+  background-color: #d39e00;
+}
+
+.belge-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.belge-list {
+  list-style: none;
+  padding: 0;
+}
+
+.belge-list li {
+  background-color: white;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
